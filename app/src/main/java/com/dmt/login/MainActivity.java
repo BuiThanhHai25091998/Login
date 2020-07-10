@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
                 if(pass.equals("") || pass.length() <= 0 || pass.isEmpty() || pass==null){
                     Toast.makeText(MainActivity.this,"You Dom't Password Your Email",Toast.LENGTH_SHORT).show();
                 }
-                if(email != null && pass != null){
+                if(email.length() <= 6 || pass.length() <= 4){
+                    Toast.makeText(MainActivity.this,"wrong email or password",Toast.LENGTH_SHORT).show();
+                }else {
                     Intent intent = new Intent(MainActivity.this,goPage.class);
                     startActivity(intent);
-                }else {
-                    Toast.makeText(MainActivity.this,"wrong email or password",Toast.LENGTH_SHORT).show();
                 }
             }
         });
